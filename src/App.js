@@ -19,6 +19,7 @@ const App = () => {
 
   const handleMatchResult = () => {
     if (lastPlace.length === 0) return;
+    const lastColor = board[lastPlace[0]][lastPlace[1]].chess
     const diretions = [
       { index: [1, 0], line: 'horizontal' },
       { index: [1, -1], line: 'slash' },
@@ -53,7 +54,7 @@ const App = () => {
     });
     for (const line in result) {
       if (result[line] === 5) {
-        setWinner(player);
+        setWinner(lastColor);
       }
     }
   };
